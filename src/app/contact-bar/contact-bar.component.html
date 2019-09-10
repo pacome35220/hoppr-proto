@@ -1,0 +1,21 @@
+<p>contact-bar works!</p>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+
+        <mat-list>
+            <ng-container *ngFor="let contact of contacts; let i = index">
+                <mat-list-item *ngIf="i == this.active" style="background: green"> {{contact}}</mat-list-item>
+                <mat-list-item *ngIf="i !== this.active"> {{contact}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </ng-container>
+            <mat-list-item>
+                <button mat-raised-button>
+                    <mat-icon> add </mat-icon>
+                </button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

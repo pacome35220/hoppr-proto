@@ -11,3 +11,7 @@
         <mat-icon> settings_applications </mat-icon>
     </div>
 </header>
+<main>
+    <app-contact-bar *ngIf="ready"></app-contact-bar>
+    <mat-spinner *ngIf="!ready"></mat-spinner>
+</main>
