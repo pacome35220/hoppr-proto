@@ -1,0 +1,30 @@
+mat-list {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-list-item.mine {
+    background-color: grey;
+    color: #fff;
+    margin: 20px;
+    padding: 6px 12px;
+    border-top-left-radius: 1.3em;
+    border-top-right-radius: 1.3em;
+    border-bottom-left-radius: 1.3em;
+    border-bottom-right-radius: 0em;
+    width: fit-content !important;
+    align-self: flex-end;
+}
+
+mat-list-item {
+    background-color: #d3d3d3;
+    color: rgba(0, 0, 0, 1);
+    margin: 20px;
+    padding: 6px 12px;
+    border-top-left-radius: 1.3em;
+    border-top-right-radius: 1.3em;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 1.3em;
+    white-space: normal;
+    width: fit-content !important;
+}

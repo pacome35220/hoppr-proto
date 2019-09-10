@@ -1,0 +1,7 @@
+<mat-list role="list">
+    <mat-list-item *ngFor="let message of messages" role="listitem" [ngClass]="{'mine': message.mine}">
+        <p>
+            {{message.message}}
+        </p>
+    </mat-list-item>
+</mat-list>
