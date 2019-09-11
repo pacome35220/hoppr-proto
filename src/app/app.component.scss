@@ -1,48 +1,31 @@
 @import '~../variables.scss';
 header {
-    text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: $header_height;
-    z-index: 10;
-    background: white;
     box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-}
+    border-bottom: 5px solid black;
 
-header::after {
-    background: linear-gradient(0.25turn, #80cd3d 0%, #1db6f1 25%, #f1452a 50%, #fbc81e 75%);
-    content: '';
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: $header_height;
-    height: 4px;
-}
+    img {
+        margin: 10px 0 0 10px;
+    }
 
-.home_button {
-    position: absolute;
-    left: 0;
-    margin: 10px 0 0 10px;
-    height: 80%;
-}
+    form {
+        border: 2px solid pink
+    }
 
-.icon {
-    float: right;
-    margin: 30px 30px 0 0;
-}
-
-.icon mat-icon {
-    margin: 0 30px 0 0;
-}
-
-h1 {
-    margin: $header_height / 4 auto 0 auto;
-}
-
-mat-form-field {
-    margin: 10px 0 0 0;
+    .icon {
+        margin: 30px 30px 0 0;
+        mat-icon {
+            margin: 0 30px 0 0;
+        }
+    }
 }
 
 mat-spinner {

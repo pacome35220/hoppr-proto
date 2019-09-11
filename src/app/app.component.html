@@ -1,10 +1,11 @@
-<header id="header">
-    <a routerLink="/">
-        <img class="home_button" src="../assets/HoppR_Logo.png">
-    </a>
-    <mat-form-field>
-        <input matInput placeholder="Search a Keyword">
-    </mat-form-field>
+<header>
+    <img height="80%" src="../assets/HoppR_Logo.png">
+    <form class="form-container" (submit)="login(textForm)" #textForm="ngForm" *ngIf="!isLogin">
+        <mat-form-field>
+            <input matInput placeholder="Choose your name ..." ngModel name="name" autofocus>
+        </mat-form-field>
+    </form>
+    <h1 *ngIf="isLogin"> Welcome {{name}} ! </h1>
     <div class="icon">
         <mat-icon> person_pin </mat-icon>
         <mat-icon> chat </mat-icon>
@@ -12,6 +13,6 @@
     </div>
 </header>
 <main>
-    <app-contact-bar *ngIf="ready"></app-contact-bar>
-    <mat-spinner *ngIf="!ready"></mat-spinner>
+    <app-contact-bar [name]="name" *ngIf="isLogin"></app-contact-bar>
+    <mat-spinner *ngIf="!isLogin"></mat-spinner>
 </main>

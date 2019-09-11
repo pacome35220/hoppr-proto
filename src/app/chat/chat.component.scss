@@ -29,13 +29,13 @@ mat-list-item {
     width: fit-content !important;
 }
 
-.container {
+.form-container {
     display: flex;
     flex-direction: row;
     border: 4mm ridge rgba(170, 50, 220, .6);
 }
 
-.container>* {
+.form-container>* {
     width: 100%;
 }
 

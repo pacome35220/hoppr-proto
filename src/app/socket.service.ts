@@ -12,6 +12,13 @@ export interface Contact {
 	messages: Message[];
 }
 
+export enum Network {
+	Slack = '../assets/slack_logo.png',
+	Discord = '../assets/discord_logo.png',
+	Yammer = '../assets/yammer_logo.png',
+	Mail = '../assets/mail_logo.png',
+}
+
 @Injectable({
 	providedIn: 'root'
 })

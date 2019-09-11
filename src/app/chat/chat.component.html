@@ -4,7 +4,7 @@
     </mat-list-item>
 </mat-list>
 
-<form class="container" (submit)="send(textForm)" #textForm="ngForm">
+<form class="form-container" (submit)="send(textForm)" #textForm="ngForm">
     <mat-form-field>
         <input matInput placeholder="Write here ..." ngModel name="message" autofocus>
         <button mat-raised-button type="submit">

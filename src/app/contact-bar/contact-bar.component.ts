@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Contact } from '../socket.service';
 
 @Component({
@@ -8,38 +8,8 @@ import { Contact } from '../socket.service';
 })
 export class ContactBarComponent {
 
-	contacts: Contact[] = [
-		{
-			name: 'Yed',
-			network: '../assets/slack_logo.png',
-			pending_message: 4,
-			messages: []
-		},
-		{
-			name: 'Yedd',
-			network: '../assets/discord_logo.png',
-			pending_message: 1,
-			messages: []
-		},
-		{
-			name: 'Yeddd',
-			network: '../assets/yammer_logo.png',
-			pending_message: 2,
-			messages: []
-		},
-		{
-			name: 'Yedddd',
-			network: '../assets/mail_logo.png',
-			pending_message: 0,
-			messages: []
-		},
-		{
-			name: 'Yeddddd',
-			network: '../assets/yammer_logo.png',
-			pending_message: 0,
-			messages: []
-		},
-	]
+	@Input() name: string;
+	contacts: Contact[] = [];
 
 	active: number = Math.round(Math.random() * 100 % (this.contacts.length - 1));
 

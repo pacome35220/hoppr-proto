@@ -9,20 +9,7 @@ import { Message } from '../socket.service';
 })
 export class ChatComponent {
 
-	@Input() messages: Message[] = [
-		{
-			message: 'Hello !',
-			mine: false
-		},
-		{
-			message: 'Hello, how are you ?',
-			mine: true
-		},
-		{
-			message: 'Fine !',
-			mine: false
-		}
-	]
+	@Input() messages: Message[] = []
 
 	send(form: NgForm) {
 		if (form.value.message.match(/\S/)) {
