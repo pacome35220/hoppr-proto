@@ -9,7 +9,7 @@
     <mat-sidenav #snav mode="side">
 
         <mat-list>
-            <div class="contact" *ngFor="let contact of contacts; let i = index" [ngClass]="{'active': i == this.active}">
+            <div class="contact" *ngFor="let contact of contacts; let i = index" [ngClass]="{'active': i == this.active}" (click)="switchContact(i)">
                 <img height="50px" src="{{contact.network}}">
                 <p>
                     <span matBadge="{{contact.pending_message}}" matBadgeOverlap="false">{{contact.name}}</span>

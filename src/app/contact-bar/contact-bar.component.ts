@@ -49,4 +49,8 @@ export class ContactBarComponent {
 	]
 
 	active: number = Math.round(Math.random() * 100 % (this.contacts.length - 1));
+
+	switchContact(contact_index: number) {
+		this.active = contact_index;
+	}
 }
