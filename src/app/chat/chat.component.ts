@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-interface Message {
+export interface Message {
 	message: string;
 	mine: boolean
 }
@@ -13,7 +13,7 @@ interface Message {
 })
 export class ChatComponent {
 
-	messages: Message[] = [
+	@Input() messages: Message[] = [
 		{
 			message: 'Hello !',
 			mine: false
@@ -29,10 +29,12 @@ export class ChatComponent {
 	]
 
 	send(form: NgForm) {
-		this.messages.push({
-			message: form.value.message,
-			mine: true
-		})
-		form.reset()
+		if (form.value.message.match(/\S/)) {
+			this.messages.push({
+				message: form.value.message,
+				mine: true
+			})
+			form.reset()
+		}
 	}
 }

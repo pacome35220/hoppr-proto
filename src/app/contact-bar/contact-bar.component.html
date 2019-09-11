@@ -25,6 +25,6 @@
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <app-chat></app-chat>
+        <app-chat [messages]="this.contacts[this.active].messages"></app-chat>
     </mat-sidenav-content>
 </mat-sidenav-container>

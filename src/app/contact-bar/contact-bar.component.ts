@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { Message } from '../chat/chat.component';
 
 interface Contact {
 	name: string;
 	network: string;
 	pending_message: number;
+	messages: Message[];
 }
 
 @Component({
@@ -17,27 +19,32 @@ export class ContactBarComponent {
 		{
 			name: 'Yed',
 			network: '../assets/slack_logo.png',
-			pending_message: 4
+			pending_message: 4,
+			messages: []
 		},
 		{
 			name: 'Yedd',
 			network: '../assets/discord_logo.png',
-			pending_message: 1
+			pending_message: 1,
+			messages: []
 		},
 		{
 			name: 'Yeddd',
 			network: '../assets/yammer_logo.png',
-			pending_message: 2
+			pending_message: 2,
+			messages: []
 		},
 		{
 			name: 'Yedddd',
 			network: '../assets/mail_logo.png',
-			pending_message: 0
+			pending_message: 0,
+			messages: []
 		},
 		{
 			name: 'Yeddddd',
 			network: '../assets/yammer_logo.png',
-			pending_message: 0
+			pending_message: 0,
+			messages: []
 		},
 	]
 
