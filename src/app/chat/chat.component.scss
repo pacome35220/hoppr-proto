@@ -28,3 +28,17 @@ mat-list-item {
     white-space: normal;
     width: fit-content !important;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    border: 4mm ridge rgba(170, 50, 220, .6);
+}
+
+.container>* {
+    width: 100%;
+}
+
+button {
+    float: right;
+}
