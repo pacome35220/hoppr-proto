@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { Message } from '../chat/chat.component';
-
-interface Contact {
-	name: string;
-	network: string;
-	pending_message: number;
-	messages: Message[];
-}
+import { Contact } from '../socket.service';
 
 @Component({
 	selector: 'app-contact-bar',

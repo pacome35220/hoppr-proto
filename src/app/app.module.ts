@@ -16,6 +16,9 @@ import { ChatComponent } from './chat/chat.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatListModule,
     MatButtonModule,
     MatToolbarModule,
-    MatBadgeModule
+    MatBadgeModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

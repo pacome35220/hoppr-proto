@@ -1,10 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
-export interface Message {
-	message: string;
-	mine: boolean
-}
+import { Message } from '../socket.service';
 
 @Component({
 	selector: 'app-chat',
