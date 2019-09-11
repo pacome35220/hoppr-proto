@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +14,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { ChatComponent } from './chat/chat.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatBadgeModule } from '@angular/material/badge';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ChatComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
@@ -30,7 +34,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDividerModule,
     MatListModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

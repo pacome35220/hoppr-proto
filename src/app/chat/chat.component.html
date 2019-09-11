@@ -1,16 +1,14 @@
 <mat-list role="list">
     <mat-list-item *ngFor="let message of messages" role="listitem" [ngClass]="{'mine': message.mine}">
-        <p>
-            {{message.message}}
-        </p>
+        <p> {{message.message}} </p>
     </mat-list-item>
 </mat-list>
 
-<div class="container">
+<form class="container" (submit)="send(textForm)" #textForm="ngForm">
     <mat-form-field>
-        <input matInput placeholder="Write here ...">
-        <button mat-raised-button>
-        <mat-icon> send </mat-icon>
-    </button>
+        <input matInput placeholder="Write here ..." ngModel name="message" autofocus>
+        <button mat-raised-button type="submit">
+            <mat-icon> send </mat-icon>
+        </button>
     </mat-form-field>
-</div>
+</form>

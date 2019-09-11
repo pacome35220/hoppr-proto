@@ -11,8 +11,9 @@
         <mat-list>
             <div class="contact" *ngFor="let contact of contacts; let i = index" [ngClass]="{'active': i == this.active}">
                 <img height="50px" src="{{contact.network}}">
-                <p> {{contact.name}}</p>
-                <span class="circle"> {{contact.pending_message}} </span>
+                <p>
+                    <span matBadge="{{contact.pending_message}}" matBadgeOverlap="false">{{contact.name}}</span>
+                </p>
                 <mat-divider></mat-divider>
             </div>
             <mat-list-item>

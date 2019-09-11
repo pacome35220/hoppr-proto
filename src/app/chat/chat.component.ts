@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 interface Message {
 	message: string;
@@ -10,7 +11,7 @@ interface Message {
 	templateUrl: './chat.component.html',
 	styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent {
 
 	messages: Message[] = [
 		{
@@ -27,13 +28,11 @@ export class ChatComponent implements OnInit {
 		}
 	]
 
-	constructor() { }
-
-	send(event) {
-
+	send(form: NgForm) {
+		this.messages.push({
+			message: form.value.message,
+			mine: true
+		})
+		form.reset()
 	}
-
-	ngOnInit() {
-	}
-
 }

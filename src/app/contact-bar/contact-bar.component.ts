@@ -41,5 +41,5 @@ export class ContactBarComponent {
 		},
 	]
 
-	active: number = Math.round(Math.random() * 100 % this.contacts.length - 1);
+	active: number = Math.round(Math.random() * 100 % (this.contacts.length - 1));
 }
