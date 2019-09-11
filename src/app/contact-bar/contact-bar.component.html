@@ -2,8 +2,8 @@
     <mat-icon> menu </mat-icon>
 </button>
 <div class="header">
-    <p> {{this.contacts[this.active].name}} </p>
-    <img height="50px" src="{{this.contacts[this.active].network}}">
+    <p> {{this.contacts[this.active]?.name}} </p>
+    <img height="50px" src="{{this.contacts[this.active]?.network}}">
 </div>
 <mat-sidenav-container class="container">
     <mat-sidenav #snav mode="side">
@@ -25,6 +25,7 @@
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <app-chat [messages]="this.contacts[this.active].messages"></app-chat>
+        <app-chat *ngIf="this.contacts?.length" [messages]="this.contacts[this.active]?.messages"></app-chat>
+        <p *ngIf="!this.contacts?.length"> t'a pas d'ami prend un curly en cliquant à gauche </p>
     </mat-sidenav-content>
 </mat-sidenav-container>

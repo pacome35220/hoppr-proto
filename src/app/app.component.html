@@ -1,6 +1,6 @@
 <header>
     <img height="80%" src="../assets/HoppR_Logo.png">
-    <form class="form-container" (submit)="login(textForm)" #textForm="ngForm" *ngIf="!isLogin">
+    <form (submit)="login(textForm)" #textForm="ngForm" *ngIf="!isLogin">
         <mat-form-field>
             <input matInput placeholder="Choose your name ..." ngModel name="name" autofocus>
         </mat-form-field>

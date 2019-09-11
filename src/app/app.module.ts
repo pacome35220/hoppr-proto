@@ -21,27 +21,27 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContactBarComponent,
-    ChatComponent
-  ],
-  imports: [
-    FormsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
-    MatDividerModule,
-    MatListModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatBadgeModule,
-    SocketIoModule.forRoot(config)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		ContactBarComponent,
+		ChatComponent
+	],
+	imports: [
+		FormsModule,
+		BrowserModule,
+		BrowserAnimationsModule,
+		MatIconModule,
+		MatInputModule,
+		MatProgressSpinnerModule,
+		MatSidenavModule,
+		MatDividerModule,
+		MatListModule,
+		MatButtonModule,
+		MatToolbarModule,
+		MatBadgeModule,
+		SocketIoModule.forRoot(config)
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

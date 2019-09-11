@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Socket } from 'ngx-socket-io';
 
 export interface Message {
 	message: string;
@@ -9,7 +10,6 @@ export interface Contact {
 	name: string;
 	network: string;
 	pending_message: number;
-	messages: Message[];
 }
 
 export enum Network {
@@ -24,5 +24,9 @@ export enum Network {
 })
 export class SocketService {
 
-	constructor() { }
+	constructor(private socket: Socket) { }
+
+	sendMessage(msg: string) {
+		this.socket.emit('message', msg);
+	}
 }
