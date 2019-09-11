@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { ChatComponent } from './chat/chat.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChatComponent } from './chat/chat.component';
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

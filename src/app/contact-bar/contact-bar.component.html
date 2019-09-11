@@ -1,13 +1,20 @@
-<p>contact-bar works!</p>
-<mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened>
+<button mat-fab (click)="snav.toggle()" color="primary">
+    <mat-icon> menu </mat-icon>
+</button>
+<div class="header">
+    <p> {{this.contacts[this.active].name}} </p>
+    <img height="50px" src="{{this.contacts[this.active].network}}">
+</div>
+<mat-sidenav-container class="container">
+    <mat-sidenav #snav mode="side">
 
         <mat-list>
-            <ng-container *ngFor="let contact of contacts; let i = index">
-                <mat-list-item *ngIf="i == this.active" style="background: green"> {{contact}}</mat-list-item>
-                <mat-list-item *ngIf="i !== this.active"> {{contact}}</mat-list-item>
+            <div class="contact" *ngFor="let contact of contacts; let i = index" [ngClass]="{'active': i == this.active}">
+                <img height="50px" src="{{contact.network}}">
+                <p> {{contact.name}}</p>
+                <span class="circle"> {{contact.pending_message}} </span>
                 <mat-divider></mat-divider>
-            </ng-container>
+            </div>
             <mat-list-item>
                 <button mat-raised-button>
                     <mat-icon> add </mat-icon>
