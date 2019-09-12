@@ -1,7 +1,16 @@
 version: '3'
 services:
   angular_app:
-    build: .
+    build:
+      context: .
+      dockerfile: .docker/front/Dockerfile
     ports:
       - "1341:80"
+    restart: always
+  node_app:
+    build:
+      context: .
+      dockerfile: .docker/back/Dockerfile
+    ports:
+      - "8080:8080"
     restart: always

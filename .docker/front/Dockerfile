@@ -12,6 +12,7 @@ ENV NODE_PATH=/app/node_modules
 COPY . /app
 
 RUN ng build --prod
+CMD [ "npm", "run", "server;" ]
 
 FROM nginx:1.16.0-alpine
 
