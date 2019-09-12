@@ -4,7 +4,6 @@ import * as socketIo from 'socket.io';
 import { Network } from '../src/app/socket.service'
 
 interface User {
-	channels: Channel[];
 	name: string;
 	network: Network;
 }
@@ -25,7 +24,7 @@ const server: Server = createServer(app);
 const io: SocketIO.Server = socketIo(server);
 const port: number = parseInt(process.env.PORT) || 8080;
 
-var users: User[];
+var users: User[] = [];
 
 server.listen(port, () => {
 	console.log(`Running server on port ${port}`);
