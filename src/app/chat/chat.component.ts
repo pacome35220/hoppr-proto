@@ -30,6 +30,7 @@ export class ChatComponent implements OnInit {
 
 	ngOnInit() {
 		this.socket.getMessages().subscribe((message: Message) => {
+			console.log('receive: ', message);
 			this.messages.push(message);
 		});
 	}

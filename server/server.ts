@@ -1,7 +1,7 @@
 import { createServer, Server } from 'http';
 import * as express from 'express';
 import * as socketIo from 'socket.io';
-import { Network } from '../src/app/socket.service'
+import { Network, generateRandomNetwork } from '../src/app/socket.service'
 
 interface User {
 	name: string;
@@ -29,7 +29,12 @@ io.on('connect', socket => {
 
 	socket.on('askUserList', (name: string) => {
 		console.log(`${name} ask for user list`);
-		io.emit('userList', users);
+		socket.emit('userList', users.map(x => {
+			return {
+				name: x.name,
+				network: generateRandomNetwork()
+			}
+		}));
 	});
 
 	socket.on('newUser', (user: User) => {

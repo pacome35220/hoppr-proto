@@ -26,10 +26,10 @@ export class ContactBarComponent implements OnInit {
 			});
 
 			dialogRef.afterClosed().subscribe((userSelected: Contact) => {
-				// if (userSelected) {
+				if (userSelected) {
 					console.log('userSelected: ', userSelected);
 					this.contacts.push(userSelected);
-				// }
+				}
 			});
 		});
 	}

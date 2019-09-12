@@ -49,8 +49,11 @@ export class SocketService {
 		} as Contact)
 	}
 
-	sendMessage(msg: string) {
-		this.socket.emit('message', msg);
+	sendMessage(message: string) {
+		this.socket.emit('message', {
+			message,
+			mine: false
+		} as Message);
 	}
 
 	getMessages(): Observable<Message> {
