@@ -1,7 +1,7 @@
 version: '3'
 services:
-  hoppr:
+  angular_app:
     build: .
     ports:
-      - "4200:4200"
+      - "1341:80"
     restart: always
