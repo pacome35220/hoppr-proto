@@ -1,16 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Message } from '../socket.service';
-import { SocketService } from '../socket.service';
+import { Message, SocketService } from '../socket.service';
 
 @Component({
 	selector: 'app-chat',
 	templateUrl: './chat.component.html',
 	styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit {
 
-	@Input() messages: Message[] = [{
+	messages: Message[] = [{
 		message: 'Welcome !',
 		mine: false
 	}];
@@ -27,5 +26,11 @@ export class ChatComponent {
 			this.socket.sendMessage(form.value.message);
 			form.reset();
 		}
+	}
+
+	ngOnInit() {
+		this.socket.getMessages().subscribe((message: Message) => {
+			this.messages.push(message);
+		});
 	}
 }

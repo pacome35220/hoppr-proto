@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { Observable } from 'rxjs';
 
 export interface Message {
 	message: string;
@@ -52,7 +53,20 @@ export class SocketService {
 		this.socket.emit('message', msg);
 	}
 
-	getUserList(): Contact[] {
-		return [];
+	getMessages(): Observable<Message> {
+		return Observable.create(observer => {
+			this.socket.on('message', message => {
+				observer.next(message)
+			})
+		});
+	}
+
+	getUserList(name: string): Observable<Contact[]> {
+		this.socket.emit('askUserList', name);
+		return Observable.create(observer => {
+			this.socket.on('userList', userList => {
+				observer.next(userList)
+			})
+		});
 	}
 }

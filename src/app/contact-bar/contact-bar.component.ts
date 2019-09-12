@@ -19,19 +19,18 @@ export class ContactBarComponent implements OnInit {
 		public socketService: SocketService) {}
 
 	openDialog() {
-		const userlist: Contact[] = [{
-			name: 'marco',
-			network: generateRandomNetwork(),
-			pending_message: 4
-		}]
-		const dialogRef = this.dialog.open(PopupContactComponent, {
-			width: '250px',
-			data: userlist
-		});
+		this.socketService.getUserList(this.name).subscribe((userList: Contact[]) => {
+			const dialogRef = this.dialog.open(PopupContactComponent, {
+				width: '250px',
+				data: userList.filter(x => x.name !== this.name)
+			});
 
-		dialogRef.afterClosed().subscribe((userSelected: Contact) => {
-			console.log('userSelected: ', userSelected);
-			this.contacts.push(userSelected);
+			dialogRef.afterClosed().subscribe((userSelected: Contact) => {
+				// if (userSelected) {
+					console.log('userSelected: ', userSelected);
+					this.contacts.push(userSelected);
+				// }
+			});
 		});
 	}
 

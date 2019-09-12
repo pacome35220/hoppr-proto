@@ -14,7 +14,7 @@ export class PopupContactComponent {
 		public dialogRef: MatDialogRef<PopupContactComponent>,
 		@Inject(MAT_DIALOG_DATA) public userlist: Contact[]) {}
 
-	onNoClick() {
+	close() {
 		this.dialogRef.close();
 	}
 

@@ -25,7 +25,7 @@
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <app-chat *ngIf="this.contacts?.length" [messages]="this.contacts[this.active]?.messages"></app-chat>
+        <app-chat *ngIf="this.contacts?.length"></app-chat>
         <p *ngIf="!this.contacts?.length"> t'a pas d'ami prend un curly en cliquant à gauche </p>
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -8,12 +8,6 @@ interface User {
 	network: Network;
 }
 
-interface Channel {
-	messages: Message[];
-	sender: string;
-	network: Network;
-}
-
 export interface Message {
 	text: string;
 	mine: boolean;
@@ -40,13 +34,13 @@ io.on('connect', socket => {
 
 	socket.on('newUser', (user: User) => {
 		console.log(`new channel of ${user.name} from ${user.network}`);
-		users.push(user);
-		// io.emit('newChannel', message);
+		if (!users.map(x => x.name).includes(user.name))
+			users.push(user);
 	});
 
 	socket.on('message', (message: Message) => {
 		console.log('[server](message): %s', JSON.stringify(message));
-		// io.emit('message', message);
+		socket.broadcast.emit('message', message);
 	});
 
 	socket.on('disconnect', () => {
