@@ -21,7 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
+const config: SocketIoConfig = { url: 'api.hoppr.fr', options: {} };
 
 @NgModule({
 	declarations: [
